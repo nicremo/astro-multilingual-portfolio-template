@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "NICREMO - Portfolio",
+    "title": "Nicremo - Portfolio",
     "description": "Entwickler und Ersteller moderner Web-Templates mit Fokus auf Astro, mehrsprachige Unterstützung und Performance-Optimierung."
   },
   "nav": {
@@ -12,7 +12,7 @@
   },
   "hero": {
     "greeting": "Hallo, ich bin",
-    "name": "NICREMO",
+    "name": "Nicremo",
     "pitch": "Ich erstelle moderne, mehrsprachige Web-Templates und teile sie auf GitHub, um Entwicklern beim Aufbau schneller, zugänglicher Websites zu helfen.",
     "role": "Template Creator & Developer",
     "ctaProjects": "Projekte ansehen",

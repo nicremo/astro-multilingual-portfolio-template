@@ -1,7 +1,7 @@
-export const name = "Max Example";
-export const homepage_url = "https://max-example.de/";
-export const linkedin_username = "max-example";
-export const github_username = "max-example";
+export const name = "Fabian Bitzer";
+export const homepage_url = "https://fabian-bitzer.de/";
+export const linkedin_username = "fabian-bitzer";
+export const github_username = "nicremo";
 
 /*=============================================================================\
  | The email, phone number, and address fields below are Base64 encoded to     |
@@ -11,19 +11,19 @@ export const github_username = "max-example";
  |                                                                             |
  | Mac command to Base64 encode (and copy the encoded data to the clipboard):  |
  |                                                                             |
- |     echo -n 'max-example@example.com' | base64 | pbcopy                     |
+ |     echo -n 'kontakt@bitzer-fabian.de' | base64 | pbcopy                    |
  |                                                                             |
  | Linux command to Base64 encode:                                             |
  |                                                                             |
- |     echo -n 'max-example@example.com' | base64                              |
+ |     echo -n 'kontakt@bitzer-fabian.de' | base64                             |
  |                                                                             |
  | JavaScript command to Base64 encode:                                        |
  |                                                                             |
- |     btoa('max-example@example.com')                                         |
+ |     btoa('kontakt@bitzer-fabian.de')                                        |
  |                                                                             |
  \============================================================================*/
-const email_base64_encoded = "bWF4LWV4YW1wbGVAZXhhbXBsZS5jb20=";
-const phone_base64_encoded = "KzEgMjM0LTU2Ny04OTAx";
+const email_base64_encoded = "a29udGFrdEBiaXR6ZXItZmFiaWFuLmRl";
+const phone_base64_encoded = "KzQ5IDE3OCA3MjY5MTc4";
 
 // The address fields below are for the privacy policy. They are also Base64 encoded.
 const address_line_1_base64_encoded = "MTIzIE1haW4gU3Q=";
