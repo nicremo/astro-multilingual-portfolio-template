@@ -1,0 +1,104 @@
+---
+import Button from '../ui/Buttons.astro';
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+
+const projects = [
+  {
+    title: 'Relaunch DB Training Website',
+    slug: 'db-training-relaunch',
+    image: '/images/projects/db-training.jpg',
+    tags: [t('projects.tags.uxUiDesign', lang), t('projects.tags.projectManagement', lang)],
+    shortDescription: t('projects.dbTrainingRelaunch.shortDescription', lang),
+    challenge: t('projects.dbTrainingRelaunch.challenge', lang),
+    approach: t('projects.dbTrainingRelaunch.approach', lang),
+    result: t('projects.dbTrainingRelaunch.result', lang)
+  },
+  {
+    title: 'Kampagnen-Dashboard für Media-Tracking',
+    slug: 'media-dashboard',
+    image: '/images/projects/media-dashboard.jpg',
+    tags: [t('projects.tags.dataVisualization', lang), t('projects.tags.webDevelopment', lang)],
+    shortDescription: t('projects.mediaDashboard.shortDescription', lang),
+    challenge: t('projects.mediaDashboard.challenge', lang),
+    approach: t('projects.mediaDashboard.approach', lang),
+    result: t('projects.mediaDashboard.result', lang)
+  },
+  {
+    title: 'Erklärvideos für DB Digitalisierungsprogramm',
+    slug: 'db-explainer-videos',
+    image: '/images/projects/explainer-videos.jpg',
+    tags: [t('projects.tags.motionDesign', lang), t('projects.tags.scriptStoryboard', lang)],
+    shortDescription: t('projects.dbExplainerVideos.shortDescription', lang),
+    challenge: t('projects.dbExplainerVideos.challenge', lang),
+    approach: t('projects.dbExplainerVideos.approach', lang),
+    result: t('projects.dbExplainerVideos.result', lang)
+  }
+];
+---
+
+<section id="projects" class="py-16 md:py-24 bg-neutral-bg dark:bg-neutral-dark/60">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-secondary dark:text-white mb-4">{t('projects.title', lang)}</h2>
+      <p class="text-secondary/70 dark:text-white/70 max-w-2xl">
+        {t('projects.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      {projects.map((project, index) => (
+        <div
+          class="md:col-span-4 group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="relative overflow-hidden aspect-video">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 text-xs font-mono bg-white/90 dark:bg-neutral-dark/90 backdrop-blur-sm text-primary rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="p-6">
+            <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">
+              {project.title}
+            </h3>
+            <p class="text-secondary/70 dark:text-white/70 mb-6">
+              {project.shortDescription}
+            </p>
+
+            <Button
+              text={t('projects.buttonText', lang)}
+              href={`/projects/${project.slug}`}
+              variant="outline"
+              size="sm"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <Button
+        text={t('projects.allProjectsButtonText', lang)}
+        href="/projects"
+        variant="primary"
+      />
+    </div>
+  </div>
+</section>

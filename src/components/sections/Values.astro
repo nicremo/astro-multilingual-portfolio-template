@@ -1,0 +1,86 @@
+---
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="about" class="py-16 md:py-24 bg-neutral-bg dark:bg-neutral-dark/60">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12 text-center" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-secondary dark:text-white mb-4">{t('values.title', lang)}</h2>
+      <p class="text-secondary/70 dark:text-white/70 max-w-2xl mx-auto">
+        {t('values.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Impact with Integrity Card -->
+      <div
+        class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="mb-6 text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="impactIconTitle">
+            <title id="impactIconTitle">{t('values.card1Title', lang)} Icon</title>
+            <path d="M12 3v18"></path>
+            <path d="M6 7l-4 7h8l-4-7Z"></path>
+            <path d="M18 7l-4 7h8l-4-7Z"></path>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card1Title', lang)}</h3>
+        <p class="text-secondary/70 dark:text-white/70">
+          {t('values.card1Text', lang)}
+        </p>
+      </div>
+
+      <!-- Craftmanship & Clarity Card -->
+      <div
+        class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="mb-6 text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="craftmanshipIconTitle">
+            <title id="craftmanshipIconTitle">{t('values.card2Title', lang)} Icon</title>
+            <path d="M6 3h12l4 6-10 12L2 9l4-6Z"></path>
+            <path d="M12 3 8 9l4 12 4-12-4-6Z"></path>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card2Title', lang)}</h3>
+        <p class="text-secondary/70 dark:text-white/70">
+          {t('values.card2Text', lang)}
+        </p>
+      </div>
+
+      <!-- Collaboration & Growth Card -->
+      <div
+        class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="mb-6 text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="collaborationIconTitle">
+            <title id="collaborationIconTitle">{t('values.card3Title', lang)} Icon</title>
+            <!-- Stem -->
+            <path d="M12 20V10"></path>
+            <!-- Left leaf -->
+            <path d="M12 10c-4 0-6-2-6-5 3 0 6 2 6 5Z"></path>
+            <!-- Right leaf -->
+            <path d="M12 10c4 0 6-2 6-5-3 0-6 2-6 5Z"></path>
+            <!-- Ground/base -->
+            <path d="M5 20h14"></path>
+          </svg>
+        </div>
+        <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card3Title', lang)}</h3>
+        <p class="text-secondary/70 dark:text-white/70">
+          {t('values.card3Text', lang)}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+:root {
+  --color-primary-rgb: 37, 99, 235; /* Blue-600 RGB values */
+}
+
+.dark {
+  --color-primary-rgb: 59, 130, 246; /* Blue-500 RGB values for dark mode */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply text-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-white dark:bg-neutral-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  /* Focus styles */
+  a:focus-visible, button:focus-visible {
+    @apply outline-none ring-2 ring-highlightBlue/50 ring-offset-2 dark:ring-offset-neutral-dark;
+  }
+}
+
+@layer components {
+  /* Add component classes here */
+  .container-padding {
+    @apply px-6;
+  }
+
+  /* Skill cluster components */
+  .skill-cluster {
+    transition: all 0.3s ease;
+  }
+
+  .skill-cluster:hover,
+  .skill-cluster.hover-effect {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(var(--color-primary-rgb), 0.1),
+                0 4px 6px -2px rgba(var(--color-primary-rgb), 0.05);
+    border-color: rgba(var(--color-primary-rgb), 0.3);
+  }
+
+  .cluster-tools {
+    transition: opacity 0.3s ease;
+  }
+
+  /* AOS additional animations */
+  [data-aos="zoom-in-slight"] {
+    transform: scale(0.95);
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+
+  [data-aos="zoom-in-slight"].aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .skill-level-bar {
+    width: 0; /* Initial width for animation */
+    transition: width 0.8s ease-out;
+  }
+
+  .tool-icon {
+    transition: transform 0.3s ease, rotate 0.3s ease;
+    transform-origin: center;
+  }
+}
+
+@layer utilities {
+  /* Add utility classes here */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}

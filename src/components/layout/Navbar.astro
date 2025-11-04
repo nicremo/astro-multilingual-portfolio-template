@@ -1,0 +1,177 @@
+---
+import ThemeToggle from '../ui/ThemeToggle.astro';
+import Button from '../ui/Buttons.astro'; // Ensuring .astro extension
+import LanguageSwitcher from '../ui/LanguageSwitcher.astro'; // Import the LanguageSwitcher component
+import { t } from '../../utils/i18n'; // Path relative to this component
+import { Image } from 'astro:assets';
+import logoLight from '../../assets/logo.png';
+import logoDark from '../../assets/logo_white.png';
+
+const lang = Astro.currentLocale;
+---
+
+<header id="navbar" class="fixed top-0 w-full bg-white/90 dark:bg-neutral-dark/90 backdrop-blur-sm z-50 transition-all duration-300">
+  <div class="max-w-container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo/Monogram with dark/light mode versions -->
+    <a href={lang === 'de' ? '/de/' : '/'} class="block" aria-label="Homepage">
+      <!-- Light mode logo (hidden in dark mode) -->
+      <Image src={logoLight} alt="Portfolio Logo" class="h-8 w-auto dark:hidden transition-opacity duration-300" />
+
+      <!-- Dark mode logo (hidden in light mode) -->
+      <Image src={logoDark} alt="Portfolio Logo" class="h-8 w-auto hidden dark:block transition-opacity duration-300" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <ul class="flex space-x-8">
+        <li>
+          <a href="#start" class="nav-link text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.start', lang)}</a>
+        </li>
+        <li>
+          <a href="#about" class="nav-link text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.about', lang)}</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.projects', lang)}</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.contact', lang)}</a>
+        </li>
+      </ul>
+
+      <div class="flex items-center space-x-4">
+        <ThemeToggle /> {/* Removed client:visible */}
+        <LanguageSwitcher /> {/* Removed client:load as diagnostic */}
+      </div>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center space-x-4 md:hidden">
+      <ThemeToggle /> {/* Removed client:visible */}
+      <button id="mobile-menu-button" class="text-secondary dark:text-white" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-neutral-dark border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-container mx-auto px-6 py-4">
+      <ul class="flex flex-col space-y-4">
+        <li>
+          <a href="#start" class="block py-2 text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.start', lang)}</a>
+        </li>
+        <li>
+          <a href="#about" class="block py-2 text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.about', lang)}</a>
+        </li>
+        <li>
+          <a href="#projects" class="block py-2 text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.projects', lang)}</a>
+        </li>
+        <li>
+          <a href="#contact" class="block py-2 text-secondary dark:text-white hover:text-primary dark:hover:text-primary">{t('nav.contact', lang)}</a>
+        </li>
+        <li>
+          <LanguageSwitcher /> {/* Add the LanguageSwitcher here */}
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Utility to (re)attach mobile menu event listeners
+  function attachMobileMenuListeners() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button') as HTMLElement | null;
+    const mobileMenu = document.getElementById('mobile-menu') as HTMLElement | null;
+    if (mobileMenuButton && mobileMenu) {
+      // Remove previous listener if any
+      (mobileMenuButton as HTMLElement).onclick = null;
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    mobileLinks.forEach(link => {
+      (link as HTMLElement).onclick = null;
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  }
+
+  // Attach listeners on DOMContentLoaded and after resize (in case of responsive changes)
+  document.addEventListener('DOMContentLoaded', () => {
+    attachMobileMenuListeners();
+  });
+  window.addEventListener('resize', () => {
+    attachMobileMenuListeners();
+  });
+
+  // Add shadow on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 64) {
+      navbar?.classList.add('shadow-md');
+    } else {
+      navbar?.classList.remove('shadow-md');
+    }
+  });
+
+  // Scroll spy
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      // Assert section as HTMLElement to access offsetTop and clientHeight
+      const htmlSection = section as HTMLElement;
+      const sectionTop = htmlSection.offsetTop;
+      const sectionHeight = htmlSection.clientHeight;
+
+      if (window.scrollY >= sectionTop - 100) {
+        current = section.getAttribute('id') || '';
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href')?.slice(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+<style>
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: theme('colors.primary');
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: theme('colors.primary');
+  }
+</style>

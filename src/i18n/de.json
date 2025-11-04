@@ -1,0 +1,139 @@
+{
+  "site": {
+    "title": "NICREMO - Portfolio",
+    "description": "Entwickler und Ersteller moderner Web-Templates mit Fokus auf Astro, mehrsprachige Unterstützung und Performance-Optimierung."
+  },
+  "nav": {
+    "start": "Start",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "contactButton": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "NICREMO",
+    "pitch": "Ich erstelle moderne, mehrsprachige Web-Templates und teile sie auf GitHub, um Entwicklern beim Aufbau schneller, zugänglicher Websites zu helfen.",
+    "role": "Template Creator & Developer",
+    "ctaProjects": "Projekte ansehen",
+    "ctaAbout": "Mehr über mich"
+  },
+  "values": {
+    "title": "Meine Herangehensweise",
+    "subtitle": "Diese drei Werte prägen meine Arbeit und helfen mir, überzeugende Web-Templates zu erstellen.",
+    "card1Title": "Performance",
+    "card1Text": "Schnelle Ladezeiten und optimale Performance sind die Basis für großartige Nutzererlebnisse – jedes Template erreicht 90+ Lighthouse Scores.",
+    "card2Title": "Zugänglichkeit",
+    "card2Text": "Mehrsprachige Unterstützung und WCAG 2.1 AA Compliance stellen sicher, dass jeder die Templates nutzen kann, unabhängig von Sprache oder Fähigkeiten.",
+    "card3Title": "Developer Experience",
+    "card3Text": "Sauberer Code, klare Dokumentation und einfache Anpassung durch JSON-Dateien ermöglichen Entwicklern einen schnellen Start."
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "subtitle": "Mit diesen Tools und Technologien erstelle ich moderne, performante Web-Templates.",
+    "clusters": {
+      "frontend": {
+        "title": "Frontend & Frameworks",
+        "description": "Moderne Webentwicklung mit Astro, React und statischer Seitengenerierung."
+      },
+      "design": {
+        "title": "Design & Styling",
+        "description": "Schöne Benutzeroberflächen mit Tailwind CSS, responsivem Design und Dark Mode Support."
+      },
+      "tools": {
+        "title": "Development Tools",
+        "description": "Versionskontrolle, Deployment und Optimierung für produktionsreife Templates."
+      }
+    },
+    "category": {
+      "design": "Design",
+      "coding": "Coding",
+      "framework": "Framework",
+      "deployment": "Deployment"
+    },
+    "astro": {
+      "description": "Static Site Generation & Performance"
+    },
+    "react": {
+      "description": "Interactive Components & UI"
+    },
+    "tailwind": {
+      "description": "Utility-First Styling & Design"
+    },
+    "typescript": {
+      "description": "Type-Safe Development"
+    },
+    "git": {
+      "description": "Version Control & Collaboration"
+    },
+    "vercel": {
+      "description": "Deployment & Hosting"
+    }
+  },
+  "projects": {
+    "pageTitle": "Projekte",
+    "pageDescription": "Eine Sammlung von Open-Source-Templates und Projekten auf GitHub.",
+    "heroTitle": "Meine Projekte",
+    "heroSubtitle": "Entdecke meine Sammlung von Web-Templates und Open-Source-Projekten.",
+    "viewProject": "Projekt ansehen",
+    "detailLabels": {
+      "challenge": "Herausforderung",
+      "approach": "Ansatz",
+      "result": "Ergebnis",
+      "technologiesUsed": "Verwendete Technologien"
+    },
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Open-Source-Templates und Projekte auf GitHub für Entwickler weltweit verfügbar.",
+    "astroPortfolio": {
+      "shortDescription": "Modernes, mehrsprachiges Portfolio-Template mit Astro und Tailwind CSS inklusive Dark Mode und i18n Support.",
+      "challenge": "Erstellung eines performanten, mehrsprachigen Portfolio-Templates, das sich einfach anpassen lässt ohne Code zu schreiben.",
+      "approach": "Nutzung von Astro für optimale Performance, JSON-basiertes Content Management und umfassende Dokumentation für einfaches Setup.",
+      "result": "100/100 Lighthouse Score, vollständig responsive, in mehreren Sprachen verfügbar und von Entwicklern weltweit genutzt."
+    },
+    "coreprotectWebUI": {
+      "shortDescription": "Web-Interface für CoreProtect Minecraft Plugin mit Echtzeit-Spieleraktivitätsverfolgung und Analytics.",
+      "challenge": "Visualisierung komplexer Minecraft-Serverdaten in einem intuitiven, spielerzentrierten Dashboard.",
+      "approach": "Astro SSR mit React-Komponenten, MySQL-Integration und responsive Dark-Theme UI mit Echtzeit-Updates.",
+      "result": "663.000+ Block-Änderungen verfolgt, 4.000+ Container-Transaktionen, umfassendes Spieleraktivitäts-Monitoring."
+    },
+    "templateCollection": {
+      "shortDescription": "Wachsende Sammlung von Astro-Templates auf GitHub mit Fokus auf verschiedene Anwendungsfälle und Branchen.",
+      "challenge": "Entwicklern produktionsreife Templates zur Verfügung stellen, die einfach anzupassen und zu deployen sind.",
+      "approach": "Erstellung modularer, gut dokumentierter Templates mit SEO-Optimierung und modernen Best Practices.",
+      "result": "Mehrere Templates mit wachsender Community-Akzeptanz und positivem Feedback von Entwicklern."
+    },
+    "buttonText": "Auf GitHub ansehen",
+    "allProjectsButtonText": "Alle Projekte auf GitHub"
+  },
+  "timeline": {
+    "title": "Mein Werdegang",
+    "subtitle": "Entwicklungserfahrung und wichtige Meilensteine in meiner Karriere als Template Creator.",
+    "item1Title": "Open Source Contributor",
+    "item1Description": "Erstellung und Wartung moderner Web-Templates auf GitHub. Fokus: Astro, mehrsprachige Unterstützung, Performance-Optimierung.",
+    "item2Title": "Web Development",
+    "item2Description": "Entwicklung produktionsreifer Websites und Anwendungen. Skills: Astro, React, TypeScript, Tailwind CSS, SSR.",
+    "item3Title": "Template Creator",
+    "item3Description": "Design und Entwicklung wiederverwendbarer Templates für Portfolios, Landing Pages und Webanwendungen mit umfassender Dokumentation.",
+    "buttonText": "GitHub-Profil ansehen"
+  },
+  "footerCTA": {
+    "title": "Brauchst du ein Template?",
+    "subtitle": "Schau dir meine Open-Source-Templates auf GitHub an und starte noch heute dein nächstes Projekt.",
+    "buttonText": "Auf GitHub durchsuchen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Hast du Fragen zu meinen Templates oder möchtest du zusammenarbeiten? Melde dich gerne!",
+    "emailTitle": "E-Mail",
+    "emailButtonText": "E-Mail senden",
+    "githubTitle": "GitHub",
+    "githubButtonText": "Profil ansehen",
+    "linkedinTitle": "LinkedIn",
+    "linkedinButtonText": "Auf LinkedIn verbinden"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "imprint": "Impressum",
+    "privacyPolicy": "Datenschutz"
+  }
+}

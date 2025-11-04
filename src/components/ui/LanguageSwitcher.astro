@@ -1,0 +1,30 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale = Astro.currentLocale;
+const locales = ['en']; // Define your supported locales
+
+// Function to get the URL for a different locale
+const getLocaleUrl = (locale: string) => {
+  // Get the current path without the locale prefix
+  const currentPath = Astro.url.pathname.replace(`/${currentLocale}`, '');
+  // Construct the new URL with the target locale
+  return getRelativeLocaleUrl(locale, currentPath);
+};
+---
+
+<div class="flex items-center space-x-2">
+  {locales.length > 1 && locales.map(locale => (
+    <a
+      href={getLocaleUrl(locale)}
+      class={`px-3 py-1 text-sm font-mono rounded-full transition-colors duration-200 ${
+        currentLocale === locale
+          ? 'bg-primary text-white'
+          : 'bg-gray-100 dark:bg-gray-800 text-secondary/60 dark:text-white/60 hover:bg-gray-200 dark:hover:bg-gray-700'
+      }`}
+      aria-current={currentLocale === locale ? 'page' : false}
+    >
+      {locale.toUpperCase()}
+    </a>
+  ))}
+</div>

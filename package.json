@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^4.1.1",
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@lucide/astro": "^0.544.0",
+    "@preact/compat": "^18.3.1",
+    "aos": "^2.3.4",
+    "astro": "^5.7.13",
+    "astro-compress": "^2.3.8",
+    "gsap": "^3.13.0",
+    "preact": "^10.27.2",
+    "react-obfuscate": "^3.7.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "overrides": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"
+  }
+}

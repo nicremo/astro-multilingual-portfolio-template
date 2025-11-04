@@ -1,0 +1,70 @@
+---
+// Removed Button import to create a custom non-animated button
+import { t } from '../../utils/i18n';
+import { Image } from 'astro:assets';
+import profileImg from '../../assets/profile.png';
+
+const lang = Astro.currentLocale;
+---
+
+<section id="start" class="pt-28 pb-16 md:pt-36 md:pb-24">
+  <div class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+    <div class="md:col-span-7 flex flex-col justify-center">
+      <span class="font-mono text-primary text-sm mb-4">{t('hero.greeting', lang)}</span>
+      <h1 class="font-heading text-h1 text-secondary dark:text-white mb-4">
+        {t('hero.name', lang)}
+      </h1>
+      <p class="text-lg md:text-xl text-secondary/80 dark:text-white/80 mb-6 max-w-2xl">
+        {t('hero.pitch', lang)}
+      </p>
+      <p class="text-secondary/70 dark:text-white/70 mb-8">
+        {t('hero.role', lang)}
+      </p>
+
+      <div class="flex mt-8">
+        <a
+          href="#about"
+          class="inline-flex items-center justify-center rounded-lg font-medium text-base py-2 px-6 border border-primary text-primary hover:bg-primary/10 bg-transparent"
+        >
+          {t('hero.ctaAbout', lang)}
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 mt-12 md:mt-0">
+      <div class="relative">
+        <!-- Decorative background element -->
+        <div class="absolute -top-6 -right-6 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary/10 to-orange-400/10 rounded-3xl -z-10"></div>
+
+        <!-- Profile image -->
+        <Image
+          src={profileImg}
+          alt="Garrett Koller"
+          class="w-full max-w-md mx-auto rounded-2xl shadow-lg"
+          width="500"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-100 animate-bounce cursor-pointer" onclick="document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-highlightBlue">
+      <path d="M12 5v14"></path>
+      <path d="m19 12-7 7-7-7"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* Ensure the section is relative for absolute positioning of the indicator */
+  section#start {
+    position: relative;
+    min-height: 100vh; /* Ensure hero takes full viewport height to make scroll indicator meaningful */
+  }
+</style>
+
+<!-- Removed GSAP animation script as requested -->

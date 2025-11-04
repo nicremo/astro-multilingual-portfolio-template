@@ -1,0 +1,136 @@
+---
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/sections/Footer.astro';
+import '../styles/global.css';
+import { t } from '../utils/i18n'; // Import the translation helper
+import favicon_white from '../assets/favicon.png';
+import profileImg from '../assets/profile.png';
+import { name, linkedin_url, github_url } from '../utils/me';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  lang?: string; // To explicitly pass lang, though Astro.currentLocale is preferred
+}
+
+const lang = Astro.props.lang || Astro.currentLocale;
+
+// Use translated strings for default title and description
+const {
+  title = t('site.title', lang),
+  description = t('site.description', lang)
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang || 'en'}> {/* Set lang attribute dynamically */}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href={favicon_white.src} /> {/* Keep SVG for modern browsers */}
+    <link rel="icon" type="image/png" href={favicon_white.src} /> {/* Use new PNG favicon */}
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> {/* Assuming you might add a 180x180 apple-touch-icon.png to /public */}
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site!).href} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site!).href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(profileImg.src, Astro.site!).href} />
+    <meta property="og:site_name" content={t('site.title', lang)} /> {/* Added site_name */}
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'de_DE'} /> {/* Added locale */}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={new URL(Astro.url.pathname, Astro.site!).href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(profileImg.src, Astro.site!).href} />
+    {/* <meta name="twitter:site" content="@yourtwitterhandle"> */} {/* Optional: if you have a Twitter handle */}
+    {/* <meta name="twitter:creator" content="@yourtwitterhandle"> */} {/* Optional: if you have a Twitter handle */}
+
+    <!-- Hreflang links -->
+    {/* For the default locale (en) */}
+    <link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace('/de/', '/'), Astro.site!).href.replace('/de', '')} />
+    {/* For the German locale */}
+    <link rel="alternate" hreflang="de" href={new URL('/de' + Astro.url.pathname.replace('/de/', '/'), Astro.site!).href} />
+    {/* x-default */}
+    <link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace('/en/', '/'), Astro.site!).href.replace('/en', '')} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Sora:wght@600&display=swap" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": Astro.site!.href,
+      "name": t('site.title', lang),
+      "alternateName": "Portfolio Website",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${Astro.site!.href}search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": name,
+      "url": Astro.site!.href,
+      "image": new URL(profileImg.src, Astro.site!).href,
+      "jobTitle": t('hero.role', lang), // "Dualer Student @ Digitale Medien" or "Dual Student @ Digital Media"
+      "description": description, // Main site description
+      "sameAs": [
+        linkedin_url,
+        github_url
+      ]
+    })} />
+  </head>
+  <body class="bg-white dark:bg-neutral-dark text-secondary dark:text-white transition-colors duration-300">
+    <div class="flex flex-col min-h-screen">
+      <Navbar />
+      <main class="flex-grow">
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+
+    <!-- AOS Script -->
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- GSAP (free version) -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Initialize AOS -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: false,
+          offset: 50,
+        });
+      });
+    </script>
+
+    {/* Theme logic is now handled by src/scripts/theme-toggle.js, imported by ThemeToggle.astro component */}
+    {/* <script is:inline src="../scripts/theme.js"></script> */}
+
+    <!-- Animation script - importing correctly -->
+    <script src="../scripts/animations.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Values from '../components/sections/Values.astro';
+import Skills from '../components/sections/Skills.astro';
+import Projects from '../components/sections/Projects.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import Contact from '../components/sections/Contact.astro';
+import FooterCTA from '../components/sections/FooterCTA.astro';
+import { t } from '../utils/i18n';
+
+const lang = Astro.currentLocale;
+---
+
+<Layout title={t('site.title', lang)} description={t('site.description', lang)}>
+  <Hero lang={lang} />
+  <Values lang={lang} />
+  <Skills lang={lang} />
+  {/* <Projects lang={lang} /> */}
+  <Timeline lang={lang} />
+  <Contact lang={lang} />
+  <FooterCTA lang={lang} />
+</Layout>

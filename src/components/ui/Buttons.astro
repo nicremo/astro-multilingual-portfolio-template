@@ -1,0 +1,49 @@
+---
+export interface Props {
+  text: string;
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const {
+  text,
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+} = Astro.props;
+
+const variants = {
+  primary: 'bg-primary text-white hover:bg-primary/90',
+  secondary: 'bg-secondary text-white hover:bg-secondary/90',
+  outline: 'bg-transparent border border-primary text-primary hover:bg-primary/10',
+};
+
+const sizes = {
+  sm: 'text-sm py-2 px-4',
+  md: 'text-body py-3 px-6',
+  lg: 'text-lg py-4 px-8',
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 transform hover:scale-104 hover:shadow-button focus:outline-none focus:ring-2 focus:ring-primary/50 focus-visible:ring-2 focus-visible:ring-primary/50',
+    variants[variant],
+    sizes[size],
+    className
+  ]}
+  data-aos="fade-up"
+>
+  {text}
+  <slot />
+</a>
+
+<style>
+  .hover\:scale-104:hover {
+    transform: scale(1.04);
+  }
+</style>

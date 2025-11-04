@@ -1,0 +1,110 @@
+---
+import { PanelsTopLeftIcon, CodeXmlIcon, NetworkIcon, DatabaseIcon, WorkflowIcon, CloudIcon, BoxIcon, FileCode2Icon, TreePineIcon, WindIcon, AccessibilityIcon, CoffeeIcon, LucideServer, BracesIcon, LayersIcon, TerminalIcon, SendIcon } from '@lucide/astro';
+
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+
+const skillClusters = [
+  {
+    id: 'backend',
+    title: t('skills.clusters.backend.title', lang),
+    description: t('skills.clusters.backend.description', lang),
+    icon: LucideServer,
+    tools: [
+      { name: 'Java', icon: CoffeeIcon },
+      { name: 'Scala', icon: LayersIcon },
+      { name: 'Python', icon: TerminalIcon },
+      { name: 'GraphQL', icon: NetworkIcon },
+      { name: 'PostgreSQL', icon: DatabaseIcon },
+      { name: 'Supabase', icon: SendIcon },
+      { name: 'Airflow', icon: WorkflowIcon },
+      { name: 'GCP & AWS', icon: CloudIcon },
+      { name: 'Docker', icon: BoxIcon },
+    ]
+  },
+  {
+    id: 'frontend',
+    title: t('skills.clusters.frontend.title', lang),
+    description: t('skills.clusters.frontend.description', lang),
+    icon: PanelsTopLeftIcon,
+    tools: [
+      { name: 'JavaScript', icon: BracesIcon },
+      { name: 'TypeScript', icon: FileCode2Icon },
+      { name: 'React', icon: PanelsTopLeftIcon },
+      { name: 'RedwoodJS', icon: TreePineIcon },
+      { name: 'HTML/CSS', icon: CodeXmlIcon },
+      { name: 'TailwindCSS', icon: WindIcon },
+      { name: 'Accessibility', icon: AccessibilityIcon },
+    ]
+  },
+  // {
+  //   id: 'aiML',
+  //   title: t('skills.clusters.aiML.title', lang),
+  //   description: t('skills.clusters.aiML.description', lang),
+  //   icon: BrainIcon,
+  //   tools: [
+  //     { name: 'Airflow', icon: WorkflowIcon },
+  //     { name: 'Pandas', icon: TableIcon },
+  //     { name: 'ML Model Integration', icon: BrainIcon },
+  //     { name: 'Visualizations', icon: ChartColumnIcon },
+  //   ]
+  // }
+];
+---
+
+<section id="skills" class="py-16 md:py-24">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-8 md:mb-10 text-center" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="font-heading text-h2 text-secondary dark:text-white mb-4">{t('skills.title', lang)}</h2>
+      <p class="text-secondary/70 dark:text-white/70 max-w-2xl mx-auto">
+        {t('skills.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {skillClusters.map((cluster, index) => (
+        <div
+          id={cluster.id}
+          class="skill-cluster bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay={index * 150}
+        >
+          <div class="cluster-header flex items-center mb-4">
+            <div class="icon-container mr-4 text-primary bg-primary/5 p-3 rounded-lg">
+              {/* SVG for Cluster Icon with specific paths */}
+              <cluster.icon size=26 stroke-width=1.75 />
+            </div>
+            <h3 class="font-heading text-xl text-secondary dark:text-white">
+              {cluster.title}
+            </h3>
+          </div>
+
+          <p class="text-secondary/70 dark:text-white/70 mb-4 cluster-description">
+            {cluster.description}
+          </p>
+
+          <div class="cluster-tools grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+            {cluster.tools.map((tool) => (
+              <div class="tool-item flex flex-col items-center text-center">
+                <div class="tool-icon text-primary bg-primary/5 p-3 rounded-lg mb-2">
+                  <tool.icon size=20 stroke-width=1.75 />
+                </div>
+                <p class="text-sm font-medium text-secondary dark:text-white">{tool.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Skills section will be animated via the animations.js file
+</script>

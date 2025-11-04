@@ -1,0 +1,76 @@
+---
+import Button from '../ui/Buttons.astro';
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+
+const timelineItems = ["catalist", "pc", "ga", "bah", "internship", "condor", "its", "wlu"];
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-secondary dark:text-white mb-4">{t('timeline.title', lang)}</h2>
+      <p class="text-secondary/70 dark:text-white/70 max-w-2xl">
+        {t('timeline.subtitle', lang)}
+      </p>
+    </div>
+
+    <div id="timeline-container" class="relative"> {/* Added id for GSAP trigger */}
+      <!-- Timeline line -->
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 transform md:translate-x-px"></div>
+
+      <div class="space-y-12">
+        {timelineItems.map((item, index) => (
+          <div
+            class={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
+          >
+            {/* Timeline dot - Added class="timeline-dot" */}
+            <div class="timeline-dot absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-primary border-4 border-white dark:border-neutral-dark transform -translate-x-2 md:-translate-x-2.5"></div>
+
+            <!-- Content -->
+            <div class="md:w-1/2 pl-10 md:pl-0 md:pr-12 md:text-right">
+              <span class="inline-block font-mono text-xs text-primary mb-2 uppercase tracking-wider">{t("timeline." + item + ".period", lang)}</span>
+              <h3 class="font-heading text-xl text-secondary dark:text-white mb-1">{t("timeline." + item + ".title", lang)}</h3>
+              <h4 class="font-medium text-secondary/80 dark:text-white/80 mb-2">{t("timeline." + item + ".company", lang)}</h4>
+              <p class="text-secondary/70 dark:text-white/70">{t("timeline." + item + ".description", lang)}</p>
+            </div>
+
+            <div class="md:w-1/2 md:pl-12">
+              <!-- Empty div to create the layout on alternating sides -->
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const timelineDots = document.querySelectorAll('.timeline-dot'); // Selector is now correct
+
+    gsap.from(timelineDots, {
+      scrollTrigger: {
+        trigger: '#timeline-container', // Corrected trigger
+        start: 'top 80%',
+      },
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: 'back.out(1.7)'
+    });
+  });
+</script>

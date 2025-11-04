@@ -1,0 +1,139 @@
+{
+  "site": {
+    "title": "NICREMO - Portfolio",
+    "description": "Developer and creator of modern web templates focusing on Astro, multilingual support, and performance optimization."
+  },
+  "nav": {
+    "start": "Start",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact",
+    "contactButton": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I am",
+    "name": "NICREMO",
+    "pitch": "I create modern, multilingual web templates and share them on GitHub to help developers build fast, accessible websites.",
+    "role": "Template Creator & Developer",
+    "ctaProjects": "View Projects",
+    "ctaAbout": "More About Me"
+  },
+  "values": {
+    "title": "My Approach",
+    "subtitle": "These three values shape my work and help me create compelling web templates.",
+    "card1Title": "Performance",
+    "card1Text": "Fast loading times and optimal performance are the foundation for great user experiences – every template achieves 90+ Lighthouse scores.",
+    "card2Title": "Accessibility",
+    "card2Text": "Multilingual support and WCAG 2.1 AA compliance ensure that everyone can use the templates, regardless of language or abilities.",
+    "card3Title": "Developer Experience",
+    "card3Text": "Clean code, clear documentation, and easy customization through JSON files make it simple for developers to get started quickly."
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "subtitle": "With these tools and technologies, I create modern, performant web templates.",
+    "clusters": {
+      "frontend": {
+        "title": "Frontend & Frameworks",
+        "description": "Modern web development with Astro, React, and static site generation."
+      },
+      "design": {
+        "title": "Design & Styling",
+        "description": "Beautiful interfaces with Tailwind CSS, responsive design, and dark mode support."
+      },
+      "tools": {
+        "title": "Development Tools",
+        "description": "Version control, deployment, and optimization for production-ready templates."
+      }
+    },
+    "category": {
+      "design": "Design",
+      "coding": "Coding",
+      "framework": "Framework",
+      "deployment": "Deployment"
+    },
+    "astro": {
+      "description": "Static Site Generation & Performance"
+    },
+    "react": {
+      "description": "Interactive Components & UI"
+    },
+    "tailwind": {
+      "description": "Utility-First Styling & Design"
+    },
+    "typescript": {
+      "description": "Type-Safe Development"
+    },
+    "git": {
+      "description": "Version Control & Collaboration"
+    },
+    "vercel": {
+      "description": "Deployment & Hosting"
+    }
+  },
+  "projects": {
+    "pageTitle": "Projects",
+    "pageDescription": "A collection of open-source templates and projects shared on GitHub.",
+    "heroTitle": "My Projects",
+    "heroSubtitle": "Explore my collection of web templates and open-source projects.",
+    "viewProject": "View Project",
+    "detailLabels": {
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "result": "Result",
+      "technologiesUsed": "Technologies Used"
+    },
+    "title": "Selected Projects",
+    "subtitle": "Open-source templates and projects available on GitHub for developers worldwide.",
+    "astroPortfolio": {
+      "shortDescription": "Modern, multilingual portfolio template built with Astro and Tailwind CSS featuring dark mode and i18n support.",
+      "challenge": "Creating a performant, multilingual portfolio template that's easy to customize without touching code.",
+      "approach": "Using Astro for optimal performance, JSON-based content management, and comprehensive documentation for easy setup.",
+      "result": "100/100 Lighthouse score, fully responsive, available in multiple languages, and used by developers worldwide."
+    },
+    "coreprotectWebUI": {
+      "shortDescription": "Web interface for CoreProtect Minecraft plugin with real-time player activity tracking and analytics.",
+      "challenge": "Visualizing complex Minecraft server data in an intuitive, player-centric dashboard.",
+      "approach": "Astro SSR with React components, MySQL integration, and responsive dark-themed UI with real-time updates.",
+      "result": "663,000+ block changes tracked, 4,000+ container transactions, comprehensive player activity monitoring."
+    },
+    "templateCollection": {
+      "shortDescription": "Growing collection of Astro templates shared on GitHub focusing on different use cases and industries.",
+      "challenge": "Providing developers with production-ready templates that are easy to customize and deploy.",
+      "approach": "Creating modular, well-documented templates with SEO optimization and modern best practices.",
+      "result": "Multiple templates with growing community adoption and positive feedback from developers."
+    },
+    "buttonText": "View on GitHub",
+    "allProjectsButtonText": "All Projects on GitHub"
+  },
+  "timeline": {
+    "title": "My Journey",
+    "subtitle": "Development experience and important milestones in my career as a template creator.",
+    "item1Title": "Open Source Contributor",
+    "item1Description": "Creating and maintaining modern web templates on GitHub. Focus: Astro, multilingual support, performance optimization.",
+    "item2Title": "Web Development",
+    "item2Description": "Building production-ready websites and applications. Skills: Astro, React, TypeScript, Tailwind CSS, SSR.",
+    "item3Title": "Template Creator",
+    "item3Description": "Designing and developing reusable templates for portfolios, landing pages, and web applications with comprehensive documentation.",
+    "buttonText": "View GitHub Profile"
+  },
+  "footerCTA": {
+    "title": "Need a Template?",
+    "subtitle": "Check out my open-source templates on GitHub and start building your next project today.",
+    "buttonText": "Browse on GitHub"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have questions about my templates or want to collaborate? Feel free to reach out!",
+    "emailTitle": "Email",
+    "emailButtonText": "Send Email",
+    "githubTitle": "GitHub",
+    "githubButtonText": "View Profile",
+    "linkedinTitle": "LinkedIn",
+    "linkedinButtonText": "Connect on LinkedIn"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

@@ -1,0 +1,281 @@
+---
+import Obfuscate from 'react-obfuscate';
+
+import { t } from '../../utils/i18n';
+import { email, phone, linkedin_short, linkedin_url } from '../../utils/me';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="contact" class="py-16 md:py-24 bg-secondary dark:bg-neutral-dark text-white">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12 text-center" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-white mb-4">
+        {t('contact.title', lang)}
+      </h2>
+      <p class="text-white/70 max-w-2xl mx-auto">
+        {t('contact.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Email Card -->
+      <Obfuscate
+        email={email}
+        obfuscateChildren={false}
+        client:only="preact"
+        className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="relative w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-primary"
+            role="img"
+            aria-labelledby="emailContactIconTitle"
+          >
+            <title id="emailContactIconTitle">
+              {t('contact.emailTitle', lang)} Icon
+            </title>
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+
+          <!-- Lottie Animation Placeholder - Paper Plane -->
+          <div id="email-animation" class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+
+        <h3 class="font-heading text-xl text-white mb-3">
+          {t('contact.emailTitle', lang)}
+        </h3>
+        <p class="text-white/70 mb-4">
+          <Obfuscate element="span" email={email} client:only="preact" />
+        </p>
+        <span class="inline-flex items-center text-sm text-primary font-medium">
+          <span>{t('contact.emailButtonText', lang)}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="ml-1"
+            role="img"
+            aria-labelledby="emailArrowIconTitle"
+          >
+            <title id="emailArrowIconTitle">
+              {t('contact.emailButtonText', lang)} Arrow
+            </title>
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </span>
+      </Obfuscate>
+
+      <!-- Phone Card -->
+      <Obfuscate
+        tel={phone.replace(/[^+0-9]/g, "")}
+        obfuscateChildren={false}
+        client:only="preact"
+        className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-primary"
+            role="img"
+            aria-labelledby="phoneContactIconTitle"
+          >
+            <title id="phoneContactIconTitle">
+              {t('contact.phoneTitle', lang)} Icon
+            </title>
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            ></path>
+          </svg>
+        </div>
+
+        <h3 class="font-heading text-xl text-white mb-3">
+          {t('contact.phoneTitle', lang)}
+        </h3>
+        <p class="text-white/70 mb-4">
+          <Obfuscate element="span" tel={phone} client:only="preact" />
+        </p>
+        <span class="inline-flex items-center text-sm text-primary font-medium">
+          {t('contact.phoneButtonText', lang)}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="ml-1"
+            role="img"
+            aria-labelledby="phoneArrowIconTitle"
+          >
+            <title id="phoneArrowIconTitle">
+              {t('contact.phoneButtonText', lang)} Arrow
+            </title>
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </span>
+      </Obfuscate>
+
+      <!-- LinkedIn Card -->
+      <a
+        href={linkedin_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div
+          class="w-16 h-16 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-primary"
+            role="img"
+            aria-labelledby="linkedinContactIconTitle"
+          >
+            <title id="linkedinContactIconTitle">
+              {t('contact.linkedinTitle', lang)} Icon
+            </title>
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </div>
+
+        <h3 class="font-heading text-xl text-white mb-3">
+          {t('contact.linkedinTitle', lang)}
+        </h3>
+        <p class="text-white/70 mb-4">
+          {linkedin_short}
+        </p>
+        <span class="inline-flex items-center text-sm text-primary font-medium">
+          {t('contact.linkedinButtonText', lang)}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="ml-1"
+            role="img"
+            aria-labelledby="linkedinArrowIconTitle"
+          >
+            <title id="linkedinArrowIconTitle">
+              {t('contact.linkedinButtonText', lang)} Arrow
+            </title>
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Simple paper plane animation for email card
+    // This could be replaced with a Lottie animation in production
+
+    const emailCard = document.querySelector('a[href^="mailto"]');
+    const emailAnimation = document.getElementById('email-animation');
+
+    if (emailCard && emailAnimation) {
+      // Create a simple animation that resembles a paper plane flying
+      emailCard.addEventListener('mouseenter', () => {
+        gsap.to('#email-animation', {
+          opacity: 1,
+          duration: 0.3,
+        });
+
+        // This is where you'd normally initialize a Lottie animation
+        // For this demo, we'll create a simple paper plane with GSAP
+        const paperPlane = document.createElement('div');
+        paperPlane.style.position = 'absolute';
+        paperPlane.style.width = '20px';
+        paperPlane.style.height = '20px';
+        paperPlane.style.backgroundColor = 'transparent';
+        paperPlane.style.left = '50%';
+        paperPlane.style.top = '50%';
+        paperPlane.style.transform = 'translate(-50%, -50%)';
+
+        emailAnimation.innerHTML = '';
+        emailAnimation.appendChild(paperPlane);
+
+        // Simple animation
+        gsap.fromTo(
+          paperPlane,
+          { opacity: 0, scale: 0.5 },
+          {
+            opacity: 1,
+            scale: 1,
+            rotation: 360,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+          },
+        );
+      });
+
+      emailCard.addEventListener('mouseleave', () => {
+        gsap.to('#email-animation', {
+          opacity: 0,
+          duration: 0.3,
+        });
+      });
+    }
+  });
+</script>

@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { t } from '../../utils/i18n';
+
+const lang = 'de'; // Explicitly German for this page
+const pageTitle = "Privacy Policy | " + t('site.title', lang);
+const pageDescription = "Privacy Policy of the website " + t('site.title', lang);
+---
+
+<Layout title={pageTitle} description={pageDescription} lang={lang}>
+  <section class="py-16 md:py-24">
+    <div class="max-w-container mx-auto px-6">
+      <header class="mb-12 text-center">
+        <h1 class="font-heading text-h1 text-secondary dark:text-white">Privacy Policy</h1>
+      </header>
+
+      <article class="prose dark:prose-invert max-w-none mx-auto bg-white dark:bg-neutral-dark p-6 md:p-8 rounded-lg shadow">
+        <p>The party responsible for processing data on this website (the "controller") for the purposes of the General Data Protection Regulation (GDPR) and other data protection laws applicable in Member states of the European Union and other provisions related to data protection is:</p>
+        <p>
+          [First Name Last Name]<br />
+          [Please enter your street and house number here]<br />
+          [Please enter your postal code and city here]<br />
+          Email: [email@example.com]
+        </p>
+
+        <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+          <em>Note: Please replace the placeholders ([...]) with your actual data. The following text is a general template and must be adapted to your specific circumstances and the services you use. It is strongly recommended to use an individual, legally reviewed privacy policy.</em>
+        </p>
+
+        <h2>Your Rights as a Data Subject</h2>
+        <p>You can exercise the following rights at any time using the contact details provided for our data protection officer:</p>
+        <ul>
+          <li>Information about your data stored by us and its processing (Art. 15 GDPR),</li>
+          <li>Correction of incorrect personal data (Art. 16 GDPR),</li>
+          <li>Deletion of your data stored by us (Art. 17 GDPR),</li>
+          <li>Restriction of data processing, if we are not yet allowed to delete your data due to legal obligations (Art. 18 GDPR),</li>
+          <li>Objection to the processing of your data by us (Art. 21 GDPR), and</li>
+          <li>Data portability, provided you have consented to data processing or have concluded a contract with us (Art. 20 GDPR).</li>
+        </ul>
+        <p>If you have given us consent, you can revoke it at any time with effect for the future.</p>
+        <p>You can lodge a complaint with a supervisory authority at any time, e.g., with the competent supervisory authority in the federal state of your residence or with the authority responsible for us as the controller.</p>
+
+        <h2>Collection of General Information When Visiting Our Website</h2>
+        <h3>Nature and Purpose of Processing:</h3>
+        <p>When you access our website, i.e., if you do not register or otherwise submit information, information of a general nature is automatically collected. This information (server log files) includes, for example, the type of web browser, the operating system used, the domain name of your internet service provider, your IP address, and similar data.</p>
+        <p>This data is processed, in particular, for the following purposes:</p>
+        <ul>
+          <li>Ensuring a problem-free connection to the website,</li>
+          <li>Ensuring smooth use of our website,</li>
+          <li>Evaluating system security and stability, and</li>
+          <li>Optimizing our website.</li>
+        </ul>
+        <p>We do not use your data to draw conclusions about your person. Information of this kind may be statistically analyzed by us in an anonymized form to optimize our website and the underlying technology.</p>
+        <h3>Legal Basis and Legitimate Interest:</h3>
+        <p>Processing is carried out in accordance with Art. 6 (1) (f) GDPR on the basis of our legitimate interest in improving the stability and functionality of our website.</p>
+        <h3>Recipients:</h3>
+        <p>Recipients of the data may be technical service providers who act as processors for the operation and maintenance of our website.</p>
+        <h3>Storage Period:</h3>
+        <p>The data is deleted as soon as it is no longer required for the purpose of its collection. This is generally the case for data used to provide the website when the respective session has ended.</p>
+
+        <h2>Cookies</h2>
+        <p>This website may use cookies. For detailed information on cookies and your setting options, please consult our Cookie Policy (if available) or the cookie settings on our website.</p>
+
+        <h2>Changes to Our Privacy Policy</h2>
+        <p>We reserve the right to adapt this privacy policy so that it always complies with current legal requirements or to implement changes to our services in the privacy policy, e.g., when introducing new services. The new privacy policy will then apply to your next visit.</p>
+
+        <h2>Questions to the Data Protection Officer</h2>
+        <p>If you have any questions about data protection, please send us an email or contact the person responsible for data protection in our organization directly:</p>
+        <p>[If applicable: Name and contact details of the Data Protection Officer]</p>
+        <p><em>Last updated: May 2024</em></p>
+      </article>
+    </div>
+  </section>
+</Layout>
