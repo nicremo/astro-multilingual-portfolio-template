@@ -18,18 +18,17 @@ const { lang } = Astro.props;
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Impact with Integrity Card -->
+      <!-- Performance Card -->
       <div
         class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
         data-aos="fade-up"
         data-aos-delay="100"
       >
         <div class="mb-6 text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="impactIconTitle">
-            <title id="impactIconTitle">{t('values.card1Title', lang)} Icon</title>
-            <path d="M12 3v18"></path>
-            <path d="M6 7l-4 7h8l-4-7Z"></path>
-            <path d="M18 7l-4 7h8l-4-7Z"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="performanceIconTitle">
+            <title id="performanceIconTitle">{t('values.card1Title', lang)} Icon</title>
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
           </svg>
         </div>
         <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card1Title', lang)}</h3>
@@ -38,17 +37,17 @@ const { lang } = Astro.props;
         </p>
       </div>
 
-      <!-- Craftmanship & Clarity Card -->
+      <!-- Accessibility Card -->
       <div
         class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
         data-aos="fade-up"
         data-aos-delay="200"
       >
         <div class="mb-6 text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="craftmanshipIconTitle">
-            <title id="craftmanshipIconTitle">{t('values.card2Title', lang)} Icon</title>
-            <path d="M6 3h12l4 6-10 12L2 9l4-6Z"></path>
-            <path d="M12 3 8 9l4 12 4-12-4-6Z"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="accessibilityIconTitle">
+            <title id="accessibilityIconTitle">{t('values.card2Title', lang)} Icon</title>
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
         </div>
         <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card2Title', lang)}</h3>
@@ -57,23 +56,17 @@ const { lang } = Astro.props;
         </p>
       </div>
 
-      <!-- Collaboration & Growth Card -->
+      <!-- Developer Experience Card -->
       <div
         class="group bg-white dark:bg-neutral-dark border border-gray-100 dark:border-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gradient-highlight dark:hover:bg-gradient-to-br dark:hover:from-primary/5 dark:hover:to-orange-500/5"
         data-aos="fade-up"
         data-aos-delay="300"
       >
         <div class="mb-6 text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="collaborationIconTitle">
-            <title id="collaborationIconTitle">{t('values.card3Title', lang)} Icon</title>
-            <!-- Stem -->
-            <path d="M12 20V10"></path>
-            <!-- Left leaf -->
-            <path d="M12 10c-4 0-6-2-6-5 3 0 6 2 6 5Z"></path>
-            <!-- Right leaf -->
-            <path d="M12 10c4 0 6-2 6-5-3 0-6 2-6 5Z"></path>
-            <!-- Ground/base -->
-            <path d="M5 20h14"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="developerExperienceIconTitle">
+            <title id="developerExperienceIconTitle">{t('values.card3Title', lang)} Icon</title>
+            <path d="M12 20v-6M9 20v-4M6 20v-2M15 20v-2M18 20v-4"></path>
+            <path d="m4 4 2.5 2.5M19.1 8l-7.2 7.2M15 12V4h-8"></path>
           </svg>
         </div>
         <h3 class="font-heading text-xl text-secondary dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">{t('values.card3Title', lang)}</h3>

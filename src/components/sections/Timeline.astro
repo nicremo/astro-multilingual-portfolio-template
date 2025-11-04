@@ -8,7 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 
-const timelineItems = ["catalist", "pc", "ga", "bah", "internship", "condor", "its", "wlu"];
+const timelineItems = ["item1", "item2", "item3"];
 ---
 
 <section class="py-16 md:py-24">
@@ -35,10 +35,8 @@ const timelineItems = ["catalist", "pc", "ga", "bah", "internship", "condor", "i
 
             <!-- Content -->
             <div class="md:w-1/2 pl-10 md:pl-0 md:pr-12 md:text-right">
-              <span class="inline-block font-mono text-xs text-primary mb-2 uppercase tracking-wider">{t("timeline." + item + ".period", lang)}</span>
-              <h3 class="font-heading text-xl text-secondary dark:text-white mb-1">{t("timeline." + item + ".title", lang)}</h3>
-              <h4 class="font-medium text-secondary/80 dark:text-white/80 mb-2">{t("timeline." + item + ".company", lang)}</h4>
-              <p class="text-secondary/70 dark:text-white/70">{t("timeline." + item + ".description", lang)}</p>
+              <h3 class="font-heading text-xl text-secondary dark:text-white mb-1">{t("timeline." + item + "Title", lang)}</h3>
+              <p class="text-secondary/70 dark:text-white/70">{t("timeline." + item + "Description", lang)}</p>
             </div>
 
             <div class="md:w-1/2 md:pl-12">

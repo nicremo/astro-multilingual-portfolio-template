@@ -1,5 +1,5 @@
 ---
-import { PanelsTopLeftIcon, CodeXmlIcon, NetworkIcon, DatabaseIcon, WorkflowIcon, CloudIcon, BoxIcon, FileCode2Icon, TreePineIcon, WindIcon, AccessibilityIcon, CoffeeIcon, LucideServer, BracesIcon, LayersIcon, TerminalIcon, SendIcon } from '@lucide/astro';
+import { PaletteIcon, Code2Icon, MegaphoneIcon, KanbanSquareIcon, LayersIcon, ImageIcon, PenToolIcon, VideoIcon, ClapperboardIcon, CameraIcon, Mic2Icon, FigmaIcon, FileCodeIcon, BracesIcon, TerminalIcon, RocketIcon, Globe2Icon, LayoutGridIcon, LinkedinIcon, Edit3Icon, SearchCheckIcon, CheckSquareIcon, BookTextIcon, LayoutDashboardIcon } from '@lucide/astro';
 
 import { t } from '../../utils/i18n';
 
@@ -11,49 +11,57 @@ const { lang } = Astro.props;
 
 const skillClusters = [
   {
-    id: 'backend',
-    title: t('skills.clusters.backend.title', lang),
-    description: t('skills.clusters.backend.description', lang),
-    icon: LucideServer,
+    id: 'design-media',
+    title: t('skills.clusters.frontend.title', lang),
+    description: t('skills.clusters.frontend.description', lang),
+    icon: PaletteIcon,
     tools: [
-      { name: 'Java', icon: CoffeeIcon },
-      { name: 'Scala', icon: LayersIcon },
-      { name: 'Python', icon: TerminalIcon },
-      { name: 'GraphQL', icon: NetworkIcon },
-      { name: 'PostgreSQL', icon: DatabaseIcon },
-      { name: 'Supabase', icon: SendIcon },
-      { name: 'Airflow', icon: WorkflowIcon },
-      { name: 'GCP & AWS', icon: CloudIcon },
-      { name: 'Docker', icon: BoxIcon },
+      { name: 'Adobe Creative Cloud', icon: LayersIcon },
+      { name: 'Photoshop', icon: ImageIcon },
+      { name: 'Illustrator', icon: PenToolIcon },
+      { name: 'Premiere Pro', icon: VideoIcon },
+      { name: 'After Effects', icon: ClapperboardIcon },
+      { name: 'Lightroom', icon: CameraIcon },
+      { name: 'Adobe Audition', icon: Mic2Icon },
+      { name: 'Figma', icon: FigmaIcon },
     ]
   },
   {
-    id: 'frontend',
-    title: t('skills.clusters.frontend.title', lang),
-    description: t('skills.clusters.frontend.description', lang),
-    icon: PanelsTopLeftIcon,
+    id: 'web-it',
+    title: t('skills.clusters.design.title', lang),
+    description: t('skills.clusters.design.description', lang),
+    icon: Code2Icon,
     tools: [
+      { name: 'HTML/CSS', icon: FileCodeIcon },
       { name: 'JavaScript', icon: BracesIcon },
-      { name: 'TypeScript', icon: FileCode2Icon },
-      { name: 'React', icon: PanelsTopLeftIcon },
-      { name: 'RedwoodJS', icon: TreePineIcon },
-      { name: 'HTML/CSS', icon: CodeXmlIcon },
-      { name: 'TailwindCSS', icon: WindIcon },
-      { name: 'Accessibility', icon: AccessibilityIcon },
+      { name: 'Python', icon: TerminalIcon },
+      { name: 'Astro', icon: RocketIcon },
+      { name: 'WordPress', icon: Globe2Icon },
+      { name: 'Elementor', icon: LayoutGridIcon },
     ]
   },
-  // {
-  //   id: 'aiML',
-  //   title: t('skills.clusters.aiML.title', lang),
-  //   description: t('skills.clusters.aiML.description', lang),
-  //   icon: BrainIcon,
-  //   tools: [
-  //     { name: 'Airflow', icon: WorkflowIcon },
-  //     { name: 'Pandas', icon: TableIcon },
-  //     { name: 'ML Model Integration', icon: BrainIcon },
-  //     { name: 'Visualizations', icon: ChartColumnIcon },
-  //   ]
-  // }
+  {
+    id: 'marketing-content',
+    title: t('skills.clusters.tools.title', lang),
+    description: t('skills.clusters.tools.description', lang),
+    icon: MegaphoneIcon,
+    tools: [
+      { name: 'LinkedIn Marketing', icon: LinkedinIcon },
+      { name: 'Content Creation', icon: Edit3Icon },
+      { name: 'SEO Basics', icon: SearchCheckIcon },
+    ]
+  },
+  {
+    id: 'management-organization',
+    title: 'Management & Organization',
+    description: 'Structured processes, efficient workflows, and collaborative project work.',
+    icon: KanbanSquareIcon,
+    tools: [
+      { name: 'Asana', icon: CheckSquareIcon },
+      { name: 'Notion', icon: BookTextIcon },
+      { name: 'Miro', icon: LayoutDashboardIcon },
+    ]
+  }
 ];
 ---
 
