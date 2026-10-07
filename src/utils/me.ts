@@ -23,7 +23,7 @@ export const github_username = "nicremo";
  |                                                                             |
  \============================================================================*/
 const email_base64_encoded = "a29udGFrdEBiaXR6ZXItZmFiaWFuLmRl";
-const phone_base64_encoded = "KzQ5IDE3OCA3MjY5MTc4";
+const phone_base64_encoded = "KzEgMjAyIDU1NSAwMTAw";
 
 // The address fields below are for the privacy policy. They are also Base64 encoded.
 const address_line_1_base64_encoded = "MTIzIE1haW4gU3Q=";
